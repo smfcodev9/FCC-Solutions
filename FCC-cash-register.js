@@ -19,7 +19,6 @@ let reversedCid = cid.slice().reverse();
 if (change === totalCid) {
   output.status = 'CLOSED';
   output.change = cid;
-  console.log(output);
   return output;
 }
 
@@ -40,14 +39,12 @@ for (let i=0; i<denom.length; i++) {
     changeArr.push( [ denom[i][0], value ]);
   }
 }
-console.log(changeArr);
 if (changeArr.length < 1 || change > 0) {
   output.status = 'INSUFFICIENT_FUNDS';
   return output;
 }
 output.status = 'OPEN';
 output.change = changeArr;
-console.log(output);
 return output;
 }
 
